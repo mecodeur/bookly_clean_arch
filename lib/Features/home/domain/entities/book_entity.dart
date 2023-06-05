@@ -1,4 +1,4 @@
-class BookEntity{
+class BookEntity {
   final String image;
   final String title;
   final String authorName;
