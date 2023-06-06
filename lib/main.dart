@@ -3,10 +3,17 @@ import 'package:bookly/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import 'Features/Splash/presentation/views/splash_view.dart';
 
-void main() {
+void main() async{
+  await Hive.initFlutter();
+
+  //Hive.registerAdapter(NoteModelAdapter());
+  //await Hive.openBox<NoteModel>(kNotesBox);
+
   runApp(const Bookly());
 }
 
