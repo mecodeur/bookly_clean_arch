@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/domain/entities/book_entity.dart';
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
@@ -11,8 +12,8 @@ import 'Features/Splash/presentation/views/splash_view.dart';
 void main() async{
   await Hive.initFlutter();
 
-  //Hive.registerAdapter(NoteModelAdapter());
-  //await Hive.openBox<NoteModel>(kNotesBox);
+  Hive.registerAdapter(BookEntityAdapter());
+  await Hive.openBox<BookEntity>(kFeaturedBox);
 
   runApp(const Bookly());
 }
