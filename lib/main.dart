@@ -17,6 +17,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 import 'Features/home/domain/use_cases/featch_newset_books_use_case.dart';
 import 'core/utils/functions/setup_service_locator.dart';
+import 'core/utils/simple_bloc_observer.dart';
 
 void main() async {
   await Hive.initFlutter();
@@ -26,6 +27,8 @@ void main() async {
   await Hive.openBox<BookEntity>(kNewsetBox);
 
   setupServiceLocator();
+
+  Bloc.observer = SimpleBlocObserver();
 
   runApp(const Bookly());
 }
