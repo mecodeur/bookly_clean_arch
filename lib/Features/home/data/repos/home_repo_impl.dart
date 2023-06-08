@@ -18,12 +18,12 @@ class HomeRepoImpl extends HomeRepo {
     try {
       List<BookEntity> books;
 
-      books = homeLocalDataSource.fetchFeaturedBooks();
+      books = homeLocalDataSource.fetchFeaturedBooks(pageNumber: pageNumber);
       if (books.isNotEmpty) {
         return right(books);
       }
 
-      books = await homeRemoteDataSource.fetchFeaturedBooks();
+      books = await homeRemoteDataSource.fetchFeaturedBooks(pageNumber: pageNumber);
       return right(books);
     } catch (e) {
       if (e is DioError) {
