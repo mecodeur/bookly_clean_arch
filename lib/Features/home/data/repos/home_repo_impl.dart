@@ -18,7 +18,9 @@ class HomeRepoImpl extends HomeRepo {
     try {
       List<BookEntity> books;
 
-      books = homeLocalDataSource.fetchFeaturedBooks();
+      books = homeLocalDataSource.fetchFeaturedBooks(
+        pageNumber: pageNumber
+      );
       if (books.isNotEmpty) {
         return right(books);
       }
