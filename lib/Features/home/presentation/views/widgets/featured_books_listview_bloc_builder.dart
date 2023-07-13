@@ -35,6 +35,7 @@ class _FeatuedBooksListViewBlocBuilderState
         }
       },
       builder: (context, state) {
+        //return FeaturedBooksListViewLoadingIndicator();
         if (state is FeaturedBooksSuccess ||
             state is FeaturedBooksPaginationLoading ||
             state is FeaturedBooksPaginationFailure) {
